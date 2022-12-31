@@ -191,13 +191,16 @@ def perangkingan_alternatif():
         'total': [],
         'rank': [],
     })
-    print(df_elemen_matriks_jarak_alternatif)
+    # print()
     # print(df_elemen_matriks_jarak_alternatif['c1'].sum())
     # df_rangking_alternatif['total'] = df_elemen_matriks_jarak_alternatif['c1','c2','c3','c4','c5','c6'].sum()
     # df_rangking_alternatif['total'] = df_elemen_matriks_jarak_alternatif['c1', 'c2'].sum(axis=1)
     df_elemen_matriks_jarak_alternatif.drop(columns=['id_alter'], inplace=True)
+    df_rangking_alternatif['nama'] = df_elemen_matriks_jarak_alternatif['nama'].copy()
     df_rangking_alternatif['total'] = df_elemen_matriks_jarak_alternatif.sum(axis=1)
     df_rangking_alternatif['rank'] = df_rangking_alternatif['total'].rank(axis=0, ascending=False)
+
+    df_rangking_alternatif.sort_values(by=['rank'], inplace=True)
     return df_rangking_alternatif
 
 df_perangkingan_alternatif = perangkingan_alternatif()

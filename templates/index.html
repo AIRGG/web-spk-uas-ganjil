@@ -286,12 +286,13 @@
           <h3>Table Perangkingan</h3>
         </div>
       </div>
-      <div class="row" style="margin-bottom: 100px">
+      <div class="row">
         <div class="col-4"></div>
         <div class="col-4">
           <table class="table table-sm table-bordered">
             <thead class="table-dark">
               <tr>
+                <th scope="col">Nama</th>
                 <th scope="col">Total</th>
                 <th scope="col">Rank</th>
               </tr>
@@ -301,6 +302,7 @@
               range(df_perangkingan_alternatif[df_perangkingan_alternatif.columns[0]].count())
               %} {% set item = df_perangkingan_alternatif.iloc[i] %}
               <tr>
+                <th scope="row">{{ item['nama']|upper }}</th>
                 <td>{{ item['total'] }}</td>
                 <td>{{ item['rank']|int }}</td>
               </tr>
@@ -309,6 +311,11 @@
           </table>
         </div>
         <div class="col-4"></div>
+      </div>
+
+      <div class="row" style="margin-bottom: 100px">
+        <b>Kesimpulan:</b>
+        Maka tempat Konveksi yang dipilih oleh Owner Angga Print untuk mengerjakan proyek pembuatan kaos yaitu Konveksi "K1"
       </div>
     </div>
   </body>
