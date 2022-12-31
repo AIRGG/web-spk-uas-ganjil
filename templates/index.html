@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPK</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <h1>Halaman Utama</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <!-- <h1>Tempat Pemilihan Koneksi Terbaik</h1> -->
+        </div>
+      </div>
+
+      <!-- batas atas -->
+      <div class="row">
+        <div class="col-6">
+          <div class="row">
+            <div class="col text-center">
+              <h3>Table Bobot</h3>
+            </div>
+          </div>
+          <table class="table table-sm table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Deskripsi</th>
+                <th scope="col">Kriteria</th>
+                <th scope="col">Bobot</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in range(df_bobot[df_bobot.columns[0]].count()) %} {% set
+              item = df_bobot.iloc[i] %}
+              <tr>
+                <td>{{ item['deskripsi'] }}</td>
+                <td>{{ item['kriteria'] }}</td>
+                <td>{{ item['bobot'] }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <!-- [END]batas bawah -->
+        </div>
+        <div class="col-6">
+          <div class="row">
+            <div class="col text-center">
+              <h3>Desc Bobot</h3>
+            </div>
+          </div>
+          <table class="table table-sm table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Kualitas Kaos</th>
+                <th scope="col">Rating</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in
+              range(df_bobot_kualitas[df_bobot_kualitas.columns[0]].count()) %}
+              {% set item = df_bobot_kualitas.iloc[i] %}
+              <tr>
+                <td>{{ item['kualitas_kaos'] }}</td>
+                <td>{{ item['rating'] }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <!-- [END]batas bawah -->
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="row">
+        <div class="col text-center">
+          <h3>Table Alternatif</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <table class="table table-sm table-bordered">
+            <thead class="table-dark">
+              <tr class="">
+                <th scope="col">
+                  Nama Konveksi<br />
+                  <span style="visibility: hidden">a</span>
+                </th>
+
+                {% for i in range(df_bobot[df_bobot.columns[0]].count()) %} {%
+                set item = df_bobot.iloc[i] %}
+                <th scope="col">
+                  {{ item['deskripsi'] }} <br />{{ item['kriteria']|upper }}
+                </th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in
+              range(df_matriks_keputusan_awal[df_matriks_keputusan_awal.columns[0]].count())
+              %} {% set item = df_matriks_keputusan_awal.iloc[i] %}
+              <tr>
+                <th scope="row">{{ item['nama']|upper }}</th>
+                <td>{{ item['c1'] }}</td>
+                <td>{{ item['c2'] }}</td>
+                <td>{{ item['c3'] }}</td>
+                <td>{{ item['c4'] }}</td>
+                <td>{{ item['c5'] }}</td>
+                <td>{{ item['c6'] }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="row">
+        <div class="col text-center">
+          <h3>Table Matrik Normalisasi Bobot Keputusan (T)</h3>
+        </div>
+      </div>
+      <table class="table table-sm table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col"></th>
+            {% for i in range(df_bobot[df_bobot.columns[0]].count()) %} {% set
+            item = df_bobot.iloc[i] %}
+            <th scope="col">{{ item['keterangan']|upper }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in
+          range(df_normalisasi_bobot[df_normalisasi_bobot.columns[0]].count())
+          %} {% set item = df_normalisasi_bobot.iloc[i] %}
+          <tr>
+            <th scope="row">{{ item['nama']|upper }}</th>
+            <td>{{ item['c1'] }}</td>
+            <td>{{ item['c2'] }}</td>
+            <td>{{ item['c3'] }}</td>
+            <td>{{ item['c4'] }}</td>
+            <td>{{ item['c5'] }}</td>
+            <td>{{ item['c6'] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <!-- [END]batas bawah -->
+
+      <hr />
+      <div class="row">
+        <div class="col text-center">
+          <h3>Table Elemen Matrik Tertimbang (V)</h3>
+        </div>
+      </div>
+      <table class="table table-sm table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col"><span style="visibility: hidden">a</span></th>
+            {% for i in range(df_bobot[df_bobot.columns[0]].count()) %} {% set
+            item = df_bobot.iloc[i] %}
+            <th scope="col"></th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in
+          range(df_normalisasi_bobot[df_normalisasi_bobot.columns[0]].count())
+          %} {% set item = df_normalisasi_bobot.iloc[i] %}
+          <tr>
+            <th scope="row">{{ item['nama']|upper }}</th>
+            <td>{{ item['c1'] }}</td>
+            <td>{{ item['c2'] }}</td>
+            <td>{{ item['c3'] }}</td>
+            <td>{{ item['c4'] }}</td>
+            <td>{{ item['c5'] }}</td>
+            <td>{{ item['c6'] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <!---Table nilai matriks batas (G)--->
+      <hr />
+      <div class="row">
+        <div class="col text-center">
+          <h3>Table nilai matriks batas (G)</h3>
+        </div>
+      </div>
+      <table class="table table-sm table-bordered">
+        <!-- <thead class="table-dark"> -->
+        <!-- <thead>
+                <th>M</th>
+                <th>G</th>
+            </thead> -->
+        <tbody>
+          <tr>
+            <th>M</th>
+            <td>
+              1 / {{ df_normalisasi_bobot.index|length }} = {{
+              1/df_normalisasi_bobot.index|length }}
+            </td>
+          </tr>
+          <tr>
+            <th>G</th>
+            {% for i in
+            range(df_nilai_matrik_batas[df_nilai_matrik_batas.columns[0]].count())
+            %} {% set item = df_nilai_matrik_batas.iloc[i] %}
+            <!-- <th scope="row">{{ item['nama']|upper }}</th> -->
+            <td>{{ item['c1'] }}</td>
+            <td>{{ item['c2'] }}</td>
+            <td>{{ item['c3'] }}</td>
+            <td>{{ item['c4'] }}</td>
+            <td>{{ item['c5'] }}</td>
+            <td>{{ item['c6'] }}</td>
+            {% endfor %}
+          </tr>
+        </tbody>
+      </table>
+
+      <!---Table Elemen Matriks Jarak Alternatif dari Daerah Perbatasan (Q)-->
+      <hr />
+      <div class="row">
+        <div class="col text-center">
+          <h3>
+            Table Elemen Matriks Jarak Alternatif dari Daerah Perbatasan (Q)
+          </h3>
+        </div>
+      </div>
+      <table class="table table-sm table-bordered">
+        <thead class="table-dark">
+          <tr class="">
+            <th scope="col">
+              Nama Konveksi<br />
+              <span style="visibility: hidden">a</span>
+            </th>
+
+            {% for i in range(df_bobot[df_bobot.columns[0]].count()) %} {% set
+            item = df_bobot.iloc[i] %}
+            <th scope="col">
+              {{ item['deskripsi'] }} <br />{{ item['kriteria']|upper }}
+            </th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in
+          range(df_elemen_matriks_jarak_alternatif[df_elemen_matriks_jarak_alternatif.columns[0]].count())
+          %} {% set item = df_elemen_matriks_jarak_alternatif.iloc[i] %}
+          <tr>
+            <th scope="row">{{ item['nama']|upper }}</th>
+            <td>{{'%0.10f'| format(item['c1']|float)}}</td>
+            <td>{{'%0.10f'| format(item['c2']|float)}}</td>
+            <td>{{'%0.10f'| format(item['c3']|float)}}</td>
+            <td>{{'%0.10f'| format(item['c4']|float)}}</td>
+            <td>{{'%0.10f'| format(item['c5']|float)}}</td>
+            <td>{{'%0.10f'| format(item['c6']|float)}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <!---->
+      <hr />
+      <div class="row">
+        <div class="col text-center">
+          <h3>Table Perangkingan</h3>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 100px">
+        <div class="col-4"></div>
+        <div class="col-4">
+          <table class="table table-sm table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Total</th>
+                <th scope="col">Rank</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in
+              range(df_perangkingan_alternatif[df_perangkingan_alternatif.columns[0]].count())
+              %} {% set item = df_perangkingan_alternatif.iloc[i] %}
+              <tr>
+                <td>{{ item['total'] }}</td>
+                <td>{{ item['rank']|int }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <div class="col-4"></div>
+      </div>
+    </div>
+  </body>
+</html>

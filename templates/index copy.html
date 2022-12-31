@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPK</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1>Halaman Utama</h1>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <!-- <h1>Tempat Pemilihan Koneksi Terbaik</h1> -->
+            </div>
+
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nama Konveksi </th>
+                    <th scope="col">Jumlah Karyawan <br>C1</th>
+                    <th scope="col">Kualitas Kaos <br>C2</th>
+                    <th scope="col">Jangka Waktu Pembuatan <br>C3</th>
+                    <th scope="col">Estimasi Pembuatan Dalam Sehari <br>C4</th>
+                    <th scope="col">Jumlah Mesin <br>C5</th>
+                    <th scope="col">Harga Kaos <br>C6</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">K1</th>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>26</td>
+                    <td>48</td>
+                    <td>24</td>
+                    <td>55</td>
+                </tr>
+                <tr>
+                    <th scope="row">K2</th>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>21</td>
+                    <td>24</td>
+                    <td>8</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <th scope="row">K3</th>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>27</td>
+                    <td>36</td>
+                    <td>12</td>
+                    <td>55</td>
+                </tr>
+                <tr>
+                    <th scope="row">K4</th>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>24</td>
+                    <td>36</td>
+                    <td>8</td>
+                    <td>65</td>
+                </tr>
+                <tr>
+                    <th scope="row">K5</th>
+                    <td>7</td>
+                    <td>3</td>
+                    <td>28</td>
+                    <td>60</td>
+                    <td>24</td>
+                    <td>65</td>
+                </tr>
+                <tr>
+                    <th scope="row">K6</th>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>8</td>
+                    <td>55</td>
+                </tr>
+                <tr>
+                    <th scope="row">K7</th>
+                    <td>9</td>
+                    <td>3</td>
+                    <td>22</td>
+                    <td>60</td>
+                    <td>8</td>
+                    <td>65</td>
+                </tr>
+                <tr>
+                    <th scope="row">K8</th>
+                    <td>6</td>
+                    <td>2</td>
+                    <td>26</td>
+                    <td>48</td>
+                    <td>24</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <th scope="row">K9</th>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>22</td>
+                    <td>24</td>
+                    <td>8</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <th scope="row">K10</th>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>22</td>
+                    <td>24</td>
+                    <td>6</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>PROFIT</td>
+                    <td>PROFIT</td>
+                    <td>COST</td>
+                    <td>PROFIT</td>
+                    <td>PROFIT</td>
+                    <td>COST</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- batas atas -->
+        <div class="row">
+            <div class="col text-center">
+                <h1>Tabel Bobot</h1>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Deskripsi </th>
+                    <th scope="col">Kriteria</th>
+                    <th scope="col">Bobot</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jumlah Karyawan</td>
+                    <td>C1</td>
+                    <td>0.1</td>
+                </tr>
+
+                <td>Kualitas Kaos</td>
+                <td>C2</td>
+                <td>0.25</td>
+                </tr>
+
+                <td>Jangka Waktu Per</td>
+                <td>C3</td>
+                <td>0.2</td>
+                </tr>
+
+                <td>Estimasi Pembuatan</td>
+                <td>C4</td>
+                <td>0.2</td>
+                </tr>
+
+                <td>Jumlah Mesin</td>
+                <td>C5</td>
+                <td>0.1</td>
+                </tr>
+
+                <td>Harga Kaos</td>
+                <td>C6</td>
+                <td>0.15</td>
+                </tr>
+
+                <td></td>
+                <td>Total</td>
+                <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- [END]batas bawah -->
+        <br>
+        <div class="row">
+            <div class="col text-center">
+                <h1>Desc Bobot</h1>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Kualitas Kaos</th>
+                    <th scope="col">Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pas</td>
+                    <td>5</td>
+                </tr>
+
+                <td>Jahitan Miring</td>
+                <td>4</td>
+                </tr>
+
+                <td>Tidak Simetris</td>
+                <td>3</td>
+                </tr>
+
+                <td>Bolong</td>
+                <td>2</td>
+                </tr>
+
+                <td>Kekecilan</td>
+                <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- [END]batas bawah -->
+        <div class="row">
+            <div class="col text-center">
+                <h1>Table Matrik Normalisir Bobot Keputusan (T)</h1>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Profit</th>
+                    <th scope="col">Profit</th>
+                    <th scope="col">Cost</th>
+                    <th scope="col">Profit</th>
+                    <th scope="col">Profit</th>
+                    <th scope="col">Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">K1</th>
+                    <td>0.5714285714</td>
+                    <td>0.75</td>
+                    <td>0.2857142857</td>
+                    <td>0.6666666667</td>
+                    <td>1</td>
+                    <td>0.6666666667</td>
+                </tr>
+                <tr>
+                    <th scope="row">K2</th>
+                    <td>0.4285714286</td>
+                    <td>0.5</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0.1111111111</td>
+                    <td>0.3333333333</td>
+                </tr>
+                <tr>
+                    <th scope="row">K3</th>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0.1428571429</td>
+                    <td>0.3333333333</td>
+                    <td>0.3333333333</td>
+                    <td>0.6666666667</td>
+                </tr>
+                <tr>
+                    <th scope="row">K4</th>
+                    <td>0.2857142857</td>
+                    <td>0</td>
+                    <td>0.5714285714</td>
+                    <td>0.3333333333</td>
+                    <td>0.1111111111</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <th scope="row">K5</th>
+                    <td>0.7142857143</td>
+                    <td>0.5</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <th scope="row">K6</th>
+                    <td>0.4285714286</td>
+                    <td>0.75</td>
+                    <td>0.7142857143</td>
+                    <td>0</td>
+                    <td>0.1111111111</td>
+                    <td>0.6666666667</td>
+                </tr>
+                <tr>
+                    <th scope="row">K7</th>
+                    <td>1</td>
+                    <td>0.5</td>
+                    <td>0.8571428571</td>
+                    <td>1</td>
+                    <td>0.1111111111</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <th scope="row">K8</th>
+                    <td>0.5714285714</td>
+                    <td>0.25</td>
+                    <td>0.28571428571</td>
+                    <td>0.6666666667</td>
+                    <td>1</td>
+                    <td>0.3333333333</td>
+                </tr>
+                <tr>
+                    <th scope="row">K9</th>
+                    <td>0.2857142857</td>
+                    <td>1</td>
+                    <td>0.8571428571</td>
+                    <td>0</td>
+                    <td>0.1111111111</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <th scope="row">K10</th>
+                    <td>0.1428571429</td>
+                    <td>0.25</td>
+                    <td>0.8571428571</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0.3333333333</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- [END]batas bawah -->
+        <div class="row">
+            <div class="col text-center">
+                <h1>Table Elemen Matrik Tertimbang (V)</h1>
+            </div>
+        </div>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="row">K1</th>
+                    <td>0.1571428571</td>
+                    <td>0.4375</td>
+                    <td>0.2571428571</td>
+                    <td>0.3333333333</td>
+                    <td>0.2</td>
+                    <td>0.25</td>
+                </tr>
+                <tr>
+                    <th scope="row">K2</th>
+                    <td>0.1428571429</td>
+                    <td>0.375</td>
+                    <td>0.4</td>
+                    <td>0.2</td>
+                    <td>0.1111111111</td>
+                    <td>0.2</td>
+                </tr>
+                <tr>
+                    <th scope="row">K3</th>
+                    <td>0.1</td>
+                    <td>0.5</td>
+                    <td>0.2285714286</td>
+                    <td>0.2666666667</td>
+                    <td>0.1333333333</td>
+                    <td>0.25</td>
+                </tr>
+                <tr>
+                    <th scope="row">K4</th>
+                    <td>0.1285714286</td>
+                    <td>0.25</td>
+                    <td>0.3142857143</td>
+                    <td>0.2666666667</td>
+                    <td>0.1111111111</td>
+                    <td>0.15</td>
+                </tr>
+                <tr>
+                    <th scope="row">K5</th>
+                    <td>0.1714285714</td>
+                    <td>0.375</td>
+                    <td>0.2</td>
+                    <td>0.4</td>
+                    <td>0.2</td>
+                    <td>0.15</td>
+                </tr>
+                <tr>
+                    <th scope="row">K6</th>
+                    <td>0.1428571429</td>
+                    <td>0.4375</td>
+                    <td>0.3428571429</td>
+                    <td>0.2</td>
+                    <td>0.1111111111</td>
+                    <td>0.25</td>
+                </tr>
+                <tr>
+                    <th scope="row">K7</th>
+                    <td>0.2</td>
+                    <td>0.375</td>
+                    <td>0.3714285714</td>
+                    <td>0.4</td>
+                    <td>0.1111111111</td>
+                    <td>0.15</td>
+                </tr>
+                <tr>
+                    <th scope="row">K8</th>
+                    <td>0.1571428571</td>
+                    <td>0.3125</td>
+                    <td>0.2571428571</td>
+                    <td>0.3333333333</td>
+                    <td>0.2</td>
+                    <td>0.2</td>
+                </tr>
+                <tr>
+                    <th scope="row">K9</th>
+                    <td>0.1285714286</td>
+                    <td>0.5</td>
+                    <td>0.3714285714</td>
+                    <td>0.2</td>
+                    <td>0.1111111111</td>
+                    <td>0.3</td>
+                </tr>
+                <tr>
+                    <th scope="row">K10</th>
+                    <td>0.1142857143</td>
+                    <td>0.3125</td>
+                    <td>0.3714285714</td>
+                    <td>0.2</td>
+                    <td>0.1</td>
+                    <td>0.2</td>
+                </tr>
+            </tbody>
+        </table>
+         <!---Table nilai matriks batas (G)--->
+         <br>
+         <div class="row">
+             <div class="col text-center">
+                 <h2>Table nilai matriks batas (G)</h2>
+             </div>
+         </div>
+         <br>
+         <table class="table">
+             <tbody>
+                 <tr>
+                     <th>M= </th>
+                     <td>0.1</td>
+                     <td>1/jumlah alternatif</td>
+                 </tr>
+ 
+                 <th>G= </th>
+                 <td>0.1417028972</td>
+                 <td>0.3792826685</td>
+                 <td>0.3037053641</td>
+                 <td>0.2695215478</td>
+                 <td>0.1335616014</td>
+                 <td>0.2042821897</td>
+                 </tr>
+             </tbody>
+         </table>
+ 
+         <!---Tabel Elemen Matriks Jarak Alternatif dari Daerah Perbatasan (Q)-->
+         <br>
+         <br>
+             <div class="row">
+                 <div class="col text-center">
+                     <h2>Tabel Elemen Matriks Jarak Alternatif dari Daerah Perbatasan (Q)</h2>
+                 </div>
+             </div>
+         <table class="table">
+             <thead>
+                 <tr>
+                     <th scope="col">Nama Konveksi </th>
+                     <th scope="col">Jumlah Karyawan <br>C1</th>
+                     <th scope="col">Kualitas Kaos <br>C2</th>
+                     <th scope="col">Jangka Waktu Pembuatan <br>C3</th>
+                     <th scope="col">Estimasi Pembuatan Dalam Sehari <br>C4</th>
+                     <th scope="col">Jumlah Mesin <br>C5</th>
+                     <th scope="col">Harga Kaos <br>C6</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                     <th scope="row">K1</th>
+                     <td>0.01543995993</td>
+                     <td>0.0582173315</td>
+                     <td>-0.046562507</td>
+                     <td>0.063811786</td>
+                     <td>0.066438399</td>
+                     <td>0.04571781</td>
+                 </tr>
+                 <tr>
+                     <th scope="row">K2</th>
+                     <td>0.001154246</td>
+                     <td>-0.004282668</td>
+                     <td>0.096294636</td>
+                     <td>-0.069521548</td>
+                     <td>-0.02245049</td>
+                     <td>-0.00428219</td>
+                 </tr>
+                 <tr>
+                     <th scope="row">K3</th>
+                     <td>2</td>
+                     <td>5</td>
+                     <td>27</td>
+                     <td>36</td>
+                     <td>12</td>
+                     <td>55</td>
+                 </tr>
+                 <tr>
+                     <th scope="row">K4</th>
+                     <td>4</td>
+                     <td>1</td>
+                     <td>24</td>
+                     <td>36</td>
+                     <td>8</td>
+                     <td>65</td>
+                 </tr>
+                 <tr>
+                     <th scope="row">K5</th>
+                     <td>7</td>
+                     <td>3</td>
+                     <td>28</td>
+                     <td>60</td>
+                     <td>24</td>
+                     <td>65</td>
+                 </tr>
+                 <tr>
+                     <th scope="row">K6</th>
+                     <td>5</td>
+                     <td>4</td>
+                     <td>23</td>
+                     <td>24</td>
+                     <td>8</td>
+                     <td>55</td>
+                 </tr>
+                 <tr>
+                     <th scope="row">K7</th>
+                     <td>9</td>
+                     <td>3</td>
+                     <td>22</td>
+                     <td>60</td>
+                     <td>8</td>
+                     <td>65</td>
+                 </tr>
+                 <tr>
+                     <th scope="row">K8</th>
+                     <td>6</td>
+                     <td>2</td>
+                     <td>26</td>
+                     <td>48</td>
+                     <td>24</td>
+                     <td>60</td>
+                 </tr>
+                 <tr>
+                     <th scope="row">K9</th>
+                     <td>4</td>
+                     <td>5</td>
+                     <td>22</td>
+                     <td>24</td>
+                     <td>8</td>
+                     <td>50</td>
+                 </tr>
+                 <tr>
+                     <th scope="row">K10</th>
+                     <td>3</td>
+                     <td>2</td>
+                     <td>22</td>
+                     <td>24</td>
+                     <td>6</td>
+                     <td>60</td>
+                 </tr>
+             </tbody>
+         </table>
+ 
+         <!---->
+         <br>
+         <div class="row">
+             <div class="col text-center">
+                 <h2>Table Perangkingan</h2>
+             </div>
+         </div>
+         <table class="table">
+             <thead>
+                 <tr>
+                     <th scope="col">Total</th>
+                     <th scope="col">Rating</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                     <td>0.203062779</td>
+                     <td>1</td>
+                 </tr>
+ 
+                 <td>-0.003088015</td>
+                 <td>8</td>
+                 </tr>
+ 
+                 <td>0.04651516</td>
+                 <td>6</td>
+                 </tr>
+ 
+                 <td>-0.211421348</td>
+                 <td>10</td>
+                 </tr>
+ 
+                 <td>0.064372303</td>
+                 <td>4</td>
+                 </tr>
+ 
+                 <td>0.052269128</td>
+                 <td>5</td>
+                 </tr>
+ 
+                 <td>0.175483414</td>
+                 <td>3</td>
+                 </tr>
+ 
+                 <td>0.028062779</td>
+                 <td>7</td>
+                 </tr>
+ 
+                 <td>0.179054842</td>
+                 <td>2</td>
+                 </tr>
+ 
+                 <td>-0.133841983</td>
+                 <td>9</td>
+                 </tr>
+             </tbody>
+         </table> 
+    </div>
+</body>
+
+</html>
