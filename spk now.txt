@@ -1,0 +1,22 @@
+tbl_tgl
+id_tgl VARCHAR 11 AI PRIMARY KEY
+tgl VARCHAR 4
+bln VARCHAR 4
+thn
+jmd
+
+tbl_ranking
+id_ranking
+id_tgl
+nama
+angka
+rank
+=================
+
+statement kesimpulan
+use case
+erd
+db
+
+
+--=--
